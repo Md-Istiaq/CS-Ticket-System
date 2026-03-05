@@ -31,7 +31,7 @@ const TaskStatus = ({ inProgressTickets, resolvedTickets, onComplete }) => {
                 ) : (
                     <div className="flex flex-col gap-2 mt-3">
                         {resolvedTickets.map((ticket) => (
-                            <div key={ticket.id} className="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                            <div key={ticket.id} className="bg-blue-100 border border-gray-200 rounded-lg p-3">
                                 <p className="text-sm text-gray-700">{ticket.title}</p>
                             </div>
                         ))}

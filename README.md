@@ -1,16 +1,43 @@
-# React + Vite
+## What is JSX, and why is it used?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+JSX (JavaScript XML) is a syntax extension for JavaScript used in React that allows developers to write HTML-like code inside JavaScript. It makes UI code easier to read and maintain by combining UI structure and logic in one place.
 
-Currently, two official plugins are available:
+JSX is not understood directly by browsers. Tools like **Babel** convert JSX into regular JavaScript before it runs in the browser.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## What is the difference between State and Props?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Props (Properties)**
+- Used to pass data from a parent component to a child component.
+- Read-only and cannot be modified by the receiving component.
+- Helps make components reusable.
 
-## Expanding the ESLint configuration
+**State**
+- Used to store data that can change within a component.
+- Managed inside the component.
+- Updating state causes the component to re-render.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+In short, **props pass data between components**, while **state manages dynamic data inside a component**.
+
+---
+
+## What is the useState hook, and how does it work?
+
+`useState` is a React Hook that allows functional components to store and update state.
+
+Example:
+
+```javascript
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
