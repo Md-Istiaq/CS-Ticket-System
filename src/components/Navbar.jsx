@@ -19,7 +19,9 @@ const Navbar = ({ onNewTicket }) => {
                         ))}
                         <button
                             onClick={onNewTicket}
-                            className="px-4 py-2 text-sm font-semibold bg-violet-600 hover:bg-violet-700 text-white rounded-md transition-colors"
+                            className="px-6 py-3 text-sm font-semibold text-white rounded-xl 
+  bg-gradient-to-r from-purple-700 to-purple-400 
+  hover:opacity-90 transition-all"
                         >
                             + New Ticket
                         </button>
