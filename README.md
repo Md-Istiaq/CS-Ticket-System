@@ -41,3 +41,26 @@ function Counter() {
     </div>
   );
 }
+
+## How can you share state between components in React?
+
+State can be shared between components by **lifting the state up** to their closest common parent component.
+
+Steps:
+1. Move the state to the parent component.
+2. Pass the state to child components using **props**.
+3. If child components need to update the state, pass a **state update function** from the parent as a prop.
+
+Example:
+
+```javascript
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <ChildDisplay count={count} />
+      <ChildButton setCount={setCount} />
+    </>
+  );
+}
